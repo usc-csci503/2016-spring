@@ -1,0 +1,4 @@
+Host 192.168.33.* 127.0.0.1 node1 node2 node3 node4
+   StrictHostKeyChecking no
+   UserKnownHostsFile=/dev/null
+	 LogLevel QUIET

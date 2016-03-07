@@ -1,0 +1,78 @@
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
+  config.vm.box = "puphpet/centos65-x64"
+
+  config.vm.define :node0 do |node0|
+    node0.vm.hostname = "node0"
+    node0.vm.network :private_network, ip: "192.168.33.100"
+		node0.vm.synced_folder "../share", "/share"
+    node0.vm.provider :virtualbox do |vb|
+      vb.customize ["modifyvm", :id, "--memory", 1024]
+    end
+
+    config.vm.provision "shell", inline: <<-SHELL
+      sudo sh /share/setup/setup.sh
+      sudo sh /vagrant/hadoop.sh
+      sudo sh /vagrant/hadoop.sh one-node
+    SHELL
+  end
+
+  config.vm.define :node1 do |node1|
+    node1.vm.hostname = "node1"
+    node1.vm.network :private_network, ip: "192.168.33.101"
+		node1.vm.synced_folder "../share", "/share"
+    node1.vm.provider :virtualbox do |vb|
+      vb.customize ["modifyvm", :id, "--memory", 512]
+    end
+
+    config.vm.provision "shell", inline: <<-SHELL
+      sudo sh /share/setup/setup.sh
+      sudo sh /vagrant/hadoop.sh cluster
+    SHELL
+  end
+
+  config.vm.define :node2 do |node2|
+    node2.vm.hostname = "node2"
+    node2.vm.network :private_network, ip: "192.168.33.102"
+		node2.vm.synced_folder "../share", "/share"
+    node2.vm.provider :virtualbox do |vb|
+      vb.customize ["modifyvm", :id, "--memory", 512]
+    end
+
+    config.vm.provision "shell", inline: <<-SHELL
+      sudo sh /share/setup/setup.sh
+      sudo sh /vagrant/hadoop.sh cluster
+    SHELL
+  end
+
+  config.vm.define :node3 do |node3|
+    node3.vm.hostname = "node3"
+    node3.vm.network :private_network, ip: "192.168.33.103"
+		node3.vm.synced_folder "../share", "/share"
+    node3.vm.provider :virtualbox do |vb|
+      vb.customize ["modifyvm", :id, "--memory", 512]
+    end
+
+    config.vm.provision "shell", inline: <<-SHELL
+      sudo sh /share/setup/setup.sh
+      sudo sh /vagrant/hadoop.sh cluster
+    SHELL
+  end
+
+  config.vm.define :node4 do |node4|
+    node4.vm.hostname = "node4"
+    node4.vm.network :private_network, ip: "192.168.33.104"
+		node4.vm.synced_folder "../share", "/share"
+    node4.vm.provider :virtualbox do |vb|
+      vb.customize ["modifyvm", :id, "--memory", 512]
+    end
+
+    config.vm.provision "shell", inline: <<-SHELL
+      sudo sh /share/setup/setup.sh
+      sudo sh /vagrant/hadoop.sh cluster
+    SHELL
+  end
+
+end

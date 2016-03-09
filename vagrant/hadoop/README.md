@@ -30,7 +30,7 @@ If you look at the `Vagrantfile` you will notice that in the single node mode, w
 
 ### Multiple Nodes Configuration
 
-The network setting for single node mode is:
+The network setting for multiple node mode is:
 
 ```
 node1 192.168.33.101

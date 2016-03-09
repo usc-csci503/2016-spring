@@ -14,7 +14,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     config.vm.provision "shell", inline: <<-SHELL
       sudo sh /share/setup/setup.sh
-      sudo sh /vagrant/hadoop.sh
       sudo sh /vagrant/hadoop.sh one-node
     SHELL
   end

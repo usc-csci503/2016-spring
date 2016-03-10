@@ -66,7 +66,7 @@ start-all.sh
 ### Run java `wordcount` program
 
 ```
-hadoop dfs -copyFromLocal gutenberg/ /user/vagrant/gutenberg
+hadoop dfs -copyFromLocal gutenberg /user/vagrant/gutenberg
 hadoop dfs -ls /user/vagrant/gutenberg
 
 hadoop jar /opt/hadoop-1.2.1/hadoop-examples-*.jar \

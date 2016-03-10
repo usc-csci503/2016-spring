@@ -94,5 +94,4 @@ You can now examine the content of `dft1-out` and the result should match `out`.
 ## References
 
 * [Running Hadoop on Ubuntu Linux (Single-Node Cluster)] (http://www.michael-noll.com/tutorials/running-hadoop-on-ubuntu-linux-single-node-cluster/)
-
 * [Hadoop Tutorial 2.2 -- Running C++ Programs on Hadoop](http://www.science.smith.edu/dftwiki/index.php/Hadoop_Tutorial_2.2_--_Running_C++_Programs_on_Hadoop)
